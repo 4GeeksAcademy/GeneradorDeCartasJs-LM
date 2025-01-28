@@ -1,1 +1,32 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+  min-height: 100%;
+}
+
+body {
+  background-color: green;
+  min-height: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+.card {
+  background-color: white;
+  width: 300px;
+  height: 500px;
+}
+
+.card-symbol {
+  font-size: 4rem;
+}
+
+#card-number {
+  font-size: 8rem;
+  font-family: serif;
+}
