@@ -2,13 +2,10 @@
 import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
 window.onload = function() {
   showRandomCard();
 
-  setInterval(showRandomCard, 10000);
+  setInterval(showRandomCard, 5000); //Intervalo de tiempo 5seg, para que se recargue la carta
 };
 
 // Función para generar carta aleatoria
@@ -47,25 +44,24 @@ function getRandomCard() {
   };
 }
 
-// Botón para generar una nueva carta
+// Funciòn para obtener una carta aleatoria y referencias a los elementos HTML donde se mostrará la carta
 
 function showRandomCard() {
-  // obtengo una carta aleatoria
   const card = getRandomCard();
 
-  // obtengo los elementos donde establecer los atributos de la carta
+  //Obteniendo Elemntos del HTML
   const cardSymbolTopElement = document.getElementById("card-symbol-top");
   const cardNumber = document.getElementById("card-number");
   const cardSymbolBottomElement = document.getElementById("card-symbol-bottom");
 
-  // establezco el contenido de los elementos con el valor de los atributos de la carta
-  cardSymbolTopElement.innerText = card.symbol;
+  // Establezco el contenido de los elementos con el valor de los atributos de la carta, para actualizar el contenido en el HTML
+  cardSymbolTopElement.innerHTML = card.symbol;
   cardSymbolTopElement.style.color = card.color;
-  cardNumber.innerText = card.number;
-  cardSymbolBottomElement.innerText = card.symbol;
+  cardNumber.innerHTML = card.number;
+  cardSymbolBottomElement.innerHTML = card.symbol;
   cardSymbolBottomElement.style.color = card.color;
 
-  // escuchar evento onclick del botón
+  // Botón nueva carta
   const newCardButton = document.getElementById("get-new-card");
   newCardButton.onclick = showRandomCard;
 }
